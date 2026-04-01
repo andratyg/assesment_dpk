@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playlist Music</title>
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+  </head>
+  <body>
+    <h1>Playlist Musik</h1>
+
+    <div class="container">
+      <div class="form">
+        <input type="text" id="judul" placeholder="Judul lagu" />
+        <input type="text" id="penyanyi" placeholder="Nama penyanyi" />
+
+        <select id="genre">
+          <option value="">Pilih genre</option>
+          <option>Pop</option>
+          <option>Rock</option>
+          <option>Jazz</option>
+          <option>Hip-Hop</option>
+          <option>Classical</option>
+        </select>
+
+        <label class="fav-label">
+          <input type="checkbox" id="favorit" /> Tandai sebagai favorit
+        </label>
+
+        <button onclick="submitLagu()" id="btnSubmit">Tambah</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Judul</th>
+            <th>Penyanyi</th>
+            <th>Genre</th>
+            <th>Fav</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="playlist"></tbody>
+      </table>
+    </div>
+
+    <script src="Assets/JS/script.js"></script>
+  </body>
+</html>
