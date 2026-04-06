@@ -1,4 +1,5 @@
-let daftarLagu = [];
+let daftarLagu = JSON.parse(localStorage.getItem("daftarLagu")) || [];
+tampilkanLagu();
 let indeksEdit = null;
 
 function tampilkanLagu() {
@@ -57,11 +58,13 @@ function submitLagu() {
 
   resetForm();
   tampilkanLagu();
+  localStorage.setItem("daftarLagu", JSON.stringify(daftarLagu));
 }
 
 function hapusLagu(indeks) {
   daftarLagu.splice(indeks, 1);
   tampilkanLagu();
+  localStorage.setItem("daftarLagu", JSON.stringify(daftarLagu));
 }
 
 function ubahLagu(indeks) {
