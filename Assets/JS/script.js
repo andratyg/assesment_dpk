@@ -10,6 +10,8 @@ function tampilkanLagu() {
     const statusFav = lagu.favorit ? "Ya" : "Tidak";
 
     baris.innerHTML = `
+      <td>${lagu.id}</td> 
+      <td>${lagu.waktu}</td>
       <td>${lagu.judul}</td>
       <td>${lagu.penyanyi}</td>
       <td>${lagu.genre}</td>
@@ -25,7 +27,7 @@ function tampilkanLagu() {
 }
 
 function submitLagu() {
-  const judul = document.getElementById("judul").value.trim();
+  const judul = document.getElementById("judul").value.trim().toUpperCase();
   const penyanyi = document.getElementById("penyanyi").value.trim();
   const genre = document.getElementById("genre").value.trim();
   const favorit = document.getElementById("favorit").checked;
@@ -36,7 +38,14 @@ function submitLagu() {
     return;
   }
 
-  const dataLagu = { judul, penyanyi, genre, favorit };
+  const dataLagu = {
+    id: Math.floor(Math.random() * 1000),
+    waktu: new Date().toLocaleString(),
+    judul,
+    penyanyi,
+    genre,
+    favorit,
+  };
 
   if (indeksEdit !== null) {
     daftarLagu[indeksEdit] = dataLagu;
